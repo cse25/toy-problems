@@ -16,3 +16,18 @@ function factorialize(num) {
   })
 };
 
+function palindrome(str) {
+  var stringLower = str.toLowerCase();
+  for (var i = 0; i < stringLower.length; i++) {
+    if (stringLower[i].charCodeAt() >= 48 && stringLower[i].charCodeAt() <= 57 || stringLower[i].charCodeAt() >= 97 && stringLower[i].charCodeAt() <= 122) {
+    } else {
+      stringLower = stringLower.replace(stringLower[i],'');
+    }
+  }
+  console.log(stringLower.split('').reverse().join())
+  if (stringLower === stringLower.split('').reverse().join('')) {
+    return true;
+  } else {
+    return false;
+  }
+};
