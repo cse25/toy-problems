@@ -40,3 +40,13 @@ function findLongestWord(str) {
 };
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
+
+function titleCase(str) {
+  var arr = str.split(' ');
+  var newArr = arr.map(function(word) {
+    var firstLetter = word[0].toUpperCase();
+    var wordRemainder = word.slice(1,word.length).toLowerCase();
+    return firstLetter + wordRemainder;
+  })
+  return newArr.join(' ')
+};
