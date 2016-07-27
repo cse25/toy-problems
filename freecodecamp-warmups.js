@@ -31,3 +31,12 @@ function palindrome(str) {
     return false;
   }
 };
+
+function findLongestWord(str) {
+  var arr = str.split(' ').map(function(x) {
+    return x.length
+  })
+  return Math.max.apply(null, arr)
+};
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
