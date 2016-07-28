@@ -65,4 +65,12 @@ function confirmEnding(str, target) {
   return (str.slice(str.length - target.length) === target);
 }
 
-confirmEnding("Bastian", "n");
+confirmEnding("Bastian", "n");function repeatStringNumTimes(str, num) {
+  var repeatedString = ''
+  for (var i = 0; i < num; i++) {
+    repeatedString += str
+  }
+  return repeatedString;
+}
+
+repeatStringNumTimes('abc', 3); // Output: 'abcabcabc'
