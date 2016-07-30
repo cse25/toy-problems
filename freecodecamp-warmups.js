@@ -83,7 +83,9 @@ repeatStringNumTimes('abc', 3); // Output: 'abcabcabc'function truncateString(st
   }
 }
 
-truncateString("A-tisket a-tasket A green and yellow basket", 11);function chunkArrayInGroups(arr, size) {
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
+function chunkArrayInGroups(arr, size) {
   var solution = []
   var count = 0;
   
