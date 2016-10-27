@@ -50,3 +50,31 @@ test();
 // var a = 1 is a variable declaration that is hoisted to the top of the function. 
 // However, its value of 1 is not retained since the assignment expression does not get hoisted.
 // When the interpreter gets to that line, 'a' is still undefined.
+
+// Question 4: How this works in JavaScript
+// What is the result of the following code? Explain your answer.
+
+var fullname = 'John Doe';
+var obj = {
+   fullname: 'Colin Ihrig',
+   prop: {
+      fullname: 'Aurelio De Rosa',
+      getFullname: function() {
+         return this.fullname;
+      }
+   }
+};
+
+console.log(obj.prop.getFullname()); // Aurelio De Rosa
+
+var test = obj.prop.getFullname;
+
+console.log(test()); // John Doe
+
+// What 'this' refers to depends on the execution context.
+
+// The first console log calls getFullname, which is a function on the prop object.
+// 'fullname' refers to the property on 'obj'.
+
+// When getFullname is assigned to the test variable, the context then refers to the global window object
+// 'fullname' is assigned to 'John Doe' in the first line.
