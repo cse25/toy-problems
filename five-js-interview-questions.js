@@ -78,3 +78,25 @@ console.log(test()); // John Doe
 
 // When getFullname is assigned to the test variable, the context then refers to the global window object
 // 'fullname' is assigned to 'John Doe' in the first line.
+
+// Question 5: call() and apply()
+// Fix the previous question’s issue so that the last console.log() prints Aurelio De Rosa.
+
+var fullname = 'John Doe';
+var obj = {
+   fullname: 'Colin Ihrig',
+   prop: {
+      fullname: 'Aurelio De Rosa',
+      getFullname: function() {
+         return this.fullname;
+      }
+   }
+};
+
+console.log(obj.prop.getFullname()); // Aurelio De Rosa
+
+var test = obj.prop.getFullname;
+
+// We can use the call method to specifically call with a different context.
+// What we pass in as an argument of call or apply (in this case 'obj.prop') is the new context of 'this'.
+console.log(test.call(obj.prop)); // Aurelio De Rosa
