@@ -30,3 +30,23 @@ String.prototype.repeatify = function(numberOfTimes) {
 console.log('hello'.repeatify(3));
 // Should print hellohellohello.
 
+// Question 3: Hoisting
+// What’s the result of executing this code and why.
+
+function test() {
+   console.log(a);
+   console.log(foo());
+   
+   var a = 1;
+   function foo() {
+      return 2;
+   }
+}
+
+test();
+
+// undefined
+// 2 
+// var a = 1 is a variable declaration that is hoisted to the top of the function. 
+// However, its value of 1 is not retained since the assignment expression does not get hoisted.
+// When the interpreter gets to that line, 'a' is still undefined.
