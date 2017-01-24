@@ -30,3 +30,23 @@ function arrayception(array) {
 }
 
 arrayception(arr)
+
+
+const arrcep = (array) => {
+  let deepest = 0;
+  
+  const recurse = (array, depth) => {
+    array.map((item) => {
+      if (Array.isArray(item)) {
+        recurse(item, depth + 1);
+      } else {
+        if (depth > deepest) {
+          deepest = depth;
+        }
+      }
+    })
+  }
+  
+  recurse(array, 1);
+  return deepest;
+}
