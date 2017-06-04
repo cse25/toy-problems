@@ -36,6 +36,20 @@ class BinaryTree {
     return doesContain
   }
   
+  findLargest() {
+    let largest
+    const recurse = (node) => {
+      if (node.R !== null) {
+        recurse(node.R)
+      } else if (node.R === null) {
+        largest = node
+      }
+    }
+    
+    recurse(this.root)
+    return largest
+  }
+  
   showTree() {
     return this.root
   }
