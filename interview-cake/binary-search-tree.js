@@ -50,6 +50,24 @@ class BinaryTree {
     return largest
   }
   
+  findSecondLargest() {
+    let secondLargest
+    const recurse = (node) => {
+      if (node.R !== null) {
+        recurse(node.R)
+      } else if (node.L === null && node.R === null) {
+        secondLargest = node
+      } else if (node.L !== null && node.L.R !== null) {
+        secondLargest = node.L.R
+      } else {
+        secondLargest = node.L
+      }
+    }
+    
+    recurse(this.root)
+    return secondLargest
+  }
+  
   showTree() {
     return this.root
   }
