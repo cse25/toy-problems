@@ -9,3 +9,9 @@ const squareDigits = (num) => {
 }
 
 squareDigits(345) // 91625
+
+const squareEveryDigit = (num) => {
+  return parseInt(num.toString(10).replace(/\D/g, '0').split('').map(Number).map(x => x + x).join(''),10);
+}
+
+squareEveryDigit(448) // 8816
