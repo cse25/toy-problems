@@ -16,3 +16,19 @@ const isUnique = (string) => {
 
 isUnique('hello') // false
 isUnique('bye') // true
+
+// implementation with Set
+const isUniqueWithSet = (string) => {
+  let set1 = new Set()
+  for (let i = 0; i < string.length; i++) {
+    if (set1.has(string[i])) {
+      return false
+    }
+    set1.add(string[i])
+  }
+  
+  return true
+}
+
+isUniqueWithSet('hello') // false
+isUniqueWithSet('bye') // true
