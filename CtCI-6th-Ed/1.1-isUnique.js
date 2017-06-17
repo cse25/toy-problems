@@ -32,3 +32,20 @@ const isUniqueWithSet = (string) => {
 
 isUniqueWithSet('hello') // false
 isUniqueWithSet('bye') // true
+
+// implementation with sort
+const isUniqueSort = (string) => {
+  let arr = string.split('').sort()
+  
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] === arr[i+1]) {
+      return false
+    }
+  }
+  
+  return true
+}
+
+isUniqueSort('hello') // false
+isUniqueSort('bye') // true
+
