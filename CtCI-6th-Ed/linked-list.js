@@ -36,4 +36,22 @@ class LinkedList {
       }
     }
   }
+  
+  removeTail() {
+    if (this.count > 0) {
+      if (this.count === 1) {
+        this.head = null
+        this.tail = null
+      } else {
+        let currNode = this.head
+        while (currNode !== this.tail) {
+          currNode = currNode.next
+        }
+        
+        currNode.next = null
+        this.tail = currNode
+      }
+      this.count--
+    }
+  }
 }
