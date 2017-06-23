@@ -24,4 +24,16 @@ class LinkedList {
     this.tail = node
     this.count++
   }
+  
+  removeHead() {
+    if (this.count > 0) {
+      this.head = this.head.next
+    
+      this.count--
+      
+      if (this.count === 0) {
+        this.tail = null
+      }
+    }
+  }
 }
