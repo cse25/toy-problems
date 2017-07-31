@@ -1,0 +1,12 @@
+// Question 13
+
+// It's possible to use the binary search algorithm to find an element in a sorted array in O(log n) time. 
+// Binary search trees have this same search performance. Why, then, do we ever use more complicated binary search trees 
+// rather than sorted lists?
+
+// a.) BSTs are faster for finding the largest and smallest elements in a set.
+// b.) BSTs require less memory than a sorted list.
+// c.) BSTs have constant-time access to the median value in a list.
+// d.) BSTs are faster for inserting and deleting items.
+
+// solution: d
